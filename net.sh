@@ -22,3 +22,6 @@ ip netns exec container ip link set dev veth1 up
 route add -net 192.168.168.2/31 gw 192.168.168.1
 
 exec ip netns exec container ./containerize.sh
+
+# Clean up!
+ip netns delete container
