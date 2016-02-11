@@ -1,6 +1,9 @@
-#!/bin/sh -e
+#!/bin/bash
 
-# Create the namespace
+. output.sh
+info "Provisioning network..."
+
+# Create the network namespace called 'container'
 ip netns add container
 
 # Enable the loopback
@@ -18,7 +21,8 @@ ip link set veth1 netns container
 ip netns exec container ip addr add dev veth1 192.168.168.2/24
 ip netns exec container ip link set dev veth1 up
 
-exec ip netns exec container ./containerize.sh
+ip netns exec container ./containerize.sh
 
 # Clean up!
+info "Cleaning up network..."
 ip netns delete container
