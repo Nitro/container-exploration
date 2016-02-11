@@ -24,7 +24,7 @@ info "Entering container..."
 ./ns_child_exec -i -m -p $BASE/containerize-2.sh
 
 # Clean up!
-info "Cleaning up..."
+info "Cleaning up mounts..."
 sleep 0.5 # There is a race with the VFS here
 umount container_root/proc > /dev/null 2>&1
 umount container_root
