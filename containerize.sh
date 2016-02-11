@@ -4,8 +4,8 @@ BASE=/root/containers
 
 cd $BASE
 
-# Make a 100MB root
-dd if=/dev/zero of=container-root.xfs bs=1024 count=100000
+# Make a 50MB root
+dd if=/dev/zero of=container-root.xfs bs=1024 count=50000
 mkfs.xfs container-root.xfs
 mkdir -p container_root
 
