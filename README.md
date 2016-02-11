@@ -1,4 +1,4 @@
-# Code Supporting "Docker: Behind the API" Talk by @relistan
+# "Docker: Behind the API" Talk by @relistan
 
 This code sets up a really basic container that shows a little bit about what Docker is doing behind the scenes.
 
